@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاگ</title>
+
+    <style>
+        @font-face {
+            font-family: 'fontsite';
+          
+            src: url(fonts/Sans\ a4fran3.eot);
+            src: url(fonts/Sans\ a4fran3.ttf);
+            src: url(fonts//Sans\ a4fran3.woff);
+        }
+        *{
+            margin: auto;
+            padding: auto;
+            font-family: 'fontsite';
+        }
+        #menu{
+            width: 1300px;
+            background-color: rgba(17, 17, 17, 0.76);
+            position: fixed;
+        }
+        
+        #menu-right{
+            width: 1000px;
+            height: 100px;
+            margin-right: 50px;
+        }
+        
+        #menu-right li{
+            margin-top: 25px;
+            display: inline-block;
+            padding: 15px;
+            margin-right: 5px;
+        }
+        
+        #menu-right a{
+            text-decoration: none;
+            color: rgb(250, 247, 247);
+        
+        }
+        
+        #menu-logo{
+            background-image: url(img/logo.png);
+            width: 35px;
+            height: 35px;
+            float: right;
+            margin-top: 35px;
+        }
+        #menu-right a:hover{
+            background-color:rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            cursor: pointer;
+        
+        }
+        
+        #menu-left a:hover{
+            background-color:rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            cursor: pointer;
+        
+        }
+        
+        #menu-left{
+            width: 230px;
+            height: 100px;
+            margin-left: 20px;
+        }
+        
+        
+        #menu-left li{
+            margin-top: 25px;
+            display: inline-block;
+            padding: 5px;
+            margin-top: 30px;
+        }
+        
+        #menu-left a{
+            text-decoration: none;
+            color: rgb(253, 253, 253);
+            margin-right: 15px;
+        }
+        html,body{
+            margin:0;
+            height:120%;
+            font-family: 'Josefin Sans', sans-serif;
+          
+          }
+          .header{
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: flex-start;
+            height:50vw;
+            min-height:400px;
+            max-height:550px;
+            min-width:300px;
+            color:#eee;
+          }
+          .header:after{
+            content:"";
+            width:100%;
+            height:40%;
+            position:absolute;
+            bottom:0;
+            left:0;
+            z-index:-1;
+           background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27,32,48,1) 100%);
+          }
+          .header:before{
+            content:"";
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+              -webkit-transform: translateZ(0) scale(1.0, 1.0);
+              transform: translateZ(0);
+              background: linear-gradient(rgba(13, 13, 14, 0.904),#4a63889d), url(img/blog1.jpg);
+              background: linear-gradient(#fff);
+            background-size:cover;
+            background-attachment:fixed;
+            animation: grow 60s  linear 10ms infinite;
+            transition:all 0.2s ease-in-out;
+            z-index:-2
+          }
+          .header a{
+            color:#000000
+          }
+          .menu{
+            display:block;
+            width:30px;
+            height:30px;
+            border:2px solid #0f0f0f;
+            border-radius:3px;
+            position:absolute;
+            right:20px;
+            top:20px;
+            text-decoration:none
+          }
+          .menu:after{
+            content:"";
+            display:block;
+            width:20px;
+            height:3px;
+            background:rgb(0, 0, 0)7f7;
+            position:absolute;
+            margin:0 auto;
+            top:5px;
+            left:0;
+            right:0;
+            box-shadow:0 8px, 0 16px
+          }
+          .logo{
+            border:2px solid #fff;
+            border-radius:3px;
+            text-decoration:none;
+            display:inline-block;
+            margin:20px;
+            padding:5px 10px;
+            font-weight:600;
+            font-size:1.2em;
+            box-sizing:border-box
+          }
+          .sides, .info{
+            flex: 0 0 auto;
+            width:50%
+          }
+          .info{
+            width:100%;
+            padding:15% 10% 0 10%;
+            text-align:center;
+            text-shadow:0 2px 3px rgba(0,0,0,0.2)
+          }
+          .author{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background:url(img/user1.jpg) center no-repeat;
+            background-size:cover;
+            box-shadow:0 2px 3px rgba(0,0,0,0.3);
+            margin-bottom:3px
+          }
+          .info h4, .meta{
+            font-size:0.7em
+          }
+          .meta{
+            font-style:italic;
+          }
+          @keyframes grow{
+            0% { transform:scale(1)}
+            50% { transform:scale(1.2)}
+          }
+          .content{  
+            padding:5% 10%;
+            text-align:justify
+          }
+          .btn{
+            color:#333;
+            border:2px solid;
+            border-radius:3px;
+            text-decoration:none;
+            display:inline-block;
+            padding:5px 10px;
+            font-weight:600
+          }
+          
+          .twtr{
+            margin-top:100px
+          }
+          .footr {
+            width: 100%;
+            height: 350px;
+            background: #1a1a1a;
+            margin: 20px auto 0;
+            position: relative;
+        }  
+        
+        .main-footer{
+            margin: 0 auto;
+            width: 1100px;
+        }
+        
+        .about{
+            width: 350px;
+           height:300px;
+            float: right;
+        }
+        
+        .about h5 {
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        
+        }
+        
+        .about p{
+            color: #e2e2e2;
+            text-align: justify;
+            font-size: 15px;
+            font-family: 'fontsite';
+        
+        }
+        
+        .social{
+            width: 350px;
+            margin: 0 50px;
+            float: right;
+        }
+        
+        .about h5 , .social h5 {
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        }
+        
+        .social ul li{
+            float: right;
+            margin: 10px 2px;
+        }   
+        
+        .social ul li img{
+            border-radius: 50%;
+        }
+        
+        .about h5 , .social h5 , .access h5{
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        }
+        
+        .access{
+            width: 300px;
+            float: right;
+        }
+        
+        .access ul li a{
+            color: #e2e2e2;
+            margin: 2px;
+        }
+        .access ul li a:hover{
+            color: #4c7d89;
+        }
+        
+        .footer-bot{
+            width: 1100px;
+            height: 50px;
+            background: #3a1847;
+            margin: 0 auto;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            clear: both;
+        }
+        
+        .copyright{
+            margin: 15px 20px;
+            float: right;
+            color: #e2e2e2;
+            }
+            .footer-bot .ui{
+                margin:15px 20px;
+                float: left;
+                color: #e2e2e2; 
+            }
+        
+        
+        
+            
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<div style="width: 1300px;height:1000px;  margin:auto;">
+    <header>
+        
+        <section id="menu">
+            
+               <section id="menu-right" style="float: right;">
+                <section id="menu-logo">
+                
+
+                </section>
+                <nav dir="rtl">
+                    <ul>
+                      <li><a href="index.html"> خانه </a></li>
+                      <li><a href="#courses">آخرین دوره ها</a></li>
+                      <li><a href="#blog"> وبلاگ</a></li>
+                      <li><a href="support.html">   پشتیبانی</a></li>
+                      <li><a href="#footer"> تماس با ما </a></li>
+                    </ul>
+                </nav>
+                
+            </section>
+
+        </section>
+    </header>
+
+
+</head>
+<body dir="rtl">
+    <div class="header">
+        
+        <div class="info">
+          <h1 style="color: #ffffff;">گوگل کولاب چیست؟</h1>
+          <div class="meta">
+            <a href="" target="_b" class="author"></a><br> توسط ادمین 24 اردیبهشت 
+          </div>
+        </div>
+      </div>
+      <section class="content">
+        <p>گوگل کولاب چیست؟</p>
+       <br>
+            زبان برنامه نویسی پایتون (Python) را کم و بیش اکثر برنامه نویس ها و مهندسان جهان می شناسند و بیشتر تکنولوژی ها از جمله (Google) نیز برای اهداف خود از این زبان بهره می گیرند، یکی از پروژه های گوگل پلتفرم (Colab)، از پایتون استفاده می کند که در این مقاله ما شما را با آن آشنا خواهیم کرد.
+
+
+ <br>
+  <br>
+    </p>
+    <p>کمپانی قدرتمند گوگل همواره در حوزه ی هوش مصنوعی پیشتاز بوده تا این حد که یک فریمورک به نام  (Tensorflow) را توسعه داد و محیطی در کنار آن به نام (Colaboratory) را قرار داد. این محیط جهت پیاده سازی الگوریتم ها و برنامه های هوش مصنوعی (Artificial Intelligence) و یادگیری ماشین (Machin Learning) می باشد.
+        <br>
+        <br>
+    </p>
+ <br><br>
+        <p>
+          Google Colab
+          Colab یک محیط Notebook رایگان است که به طور کامل در فضای ابری (Cloudy) اجرا می شود و به شما و اعضای تیمتان اجازه می‌دهد اسناد را ویرایش کنید. Colab از بسیاری از کتابخانه های معروف یادگیری ماشینی پشتیبانی می کند که می توانند به راحتی در Notebook شما بارگیری شوند. برای کار با این پلتفرم نیاز به آشنایی با ساختار پایتون دارید. صرف نظر از دلایل، معرفی Colab، یادگیری و توسعه برنامه های کاربردی یادگیری ماشین را آسان کرده است.
+          
+                  </p>
+        <br>
+        <br>
+    </p>
+        <br><br>
+        <p>
+          Google Colab چه چیزی برای ما ارائه می دهد؟       
+          به عنوان یک برنامه نویس، می توانید با استفاده از Google Colab کارهای زیر را انجام دهید.
+          
+          1- نوشتن و اجرا کردن کدهای زبان برنامه نویسی پایتون
+          
+          2- نوشتن کامنت به شکل فرمول ریاضی برای قطعه کدها
+          
+          3- ایجاد، بارگزاری و به اشتراک گذاری Notebook
+          
+          4- وارد کردن و ذخیره سازی فایل ها از Google Drive
+          
+          5- وارد کردن و به اشتراک گذاری فایل ها در Github
+          
+          6- وارد کردن داده های علمی (Datasets) از سایت های مختلف مثل Kaggle
+          
+          7- ادغام کردن کتابخانه های Pytorch، OpenCV و Keras
+          
+          8-  سرویس خدمات ابری با GPU رایگان
+        </p>
+            <br><br>
+            <p>
+              چرا از Google Colab استفاده بکنیم؟
+              1- نیازی به نصب کتابخانه های سنگین یادگیری ماشین رو سیستم خود ندارید.
+              
+              2- همه ما می دانیم که اگر خودتان چیزی را امتحان نکنید، مطالعه یا خواندن یا تماشای یک آموزش فایده ای ندارد. اما برای انجام این کار، به مشخصات سخت افزاری واقعا پیشرفته ای نیاز دارید تا سیستم شما بتواند چنین حجم کاری را تحمل کند. و همه نمی توانند لپ تاپی با چنین مشخصاتی بخرند. بنابراین برای یادگیری و تمرین یادگیری ماشین از google colab استفاده می کنیم.
+              
+              3- قابلیت اجرای برنامه بر روی GPU را دارد که می تواند سرعت پردازش را به شدت بالا برد.
+            </p>
+      </section>
+
+      <footer>
+        <div id="footer" class="footr" dir="rtl">
+            
+              <div class="about" style="margin-right: 80px;">
+                <h5 style="margin-right: 85px;margin-top:30px">درباره ما</h5>
+                <p style="margin-right: 85px;">
+                    لرن یک وب سایت جامع آموزشی در حوزه برنامه نویسی حرفه ای بوده و تمام تلاش این مجموعه و تیم آموزشی این بوده است که رضایت هنرآموزان در هر صورت بر هر چیزی اولویت داشته باشد و ثانیا تمام دانشجویان دوره را به برنامه نویسان حرفه ای تبدیل کند.
+                </p>
+              </div>
+              <div class="about" style="margin-right: 20px;">
+                <h5 style="margin-right: 85px;margin-top:30px">درباره ما</h5>
+                <p style="margin-right: 85px;">
+                    لرن یک وب سایت جامع آموزشی در حوزه برنامه نویسی حرفه ای بوده و تمام تلاش این مجموعه و تیم آموزشی این بوده است که رضایت هنرآموزان در هر صورت بر هر چیزی اولویت داشته باشد و ثانیا تمام دانشجویان دوره را به برنامه نویسان حرفه ای تبدیل کند.
+                </p>
+              </div>
+              <div class="social" style="margin-right: 10px; margin-top:30px" >
+                <h5 style="margin-right: 110px;">با ما در ارتباط باشید</h5>
+                <div>
+                    <p style="color:aliceblue;margin-right:110px">
+                        ایمیل:learn@gmail.com
+                    </p>
+                    <br>
+                    <p style=" color:aliceblue;margin-right:110px">
+                        تماس : 091645458725
+
+                    </p>
+                    <br>
+                    <p style=" color:aliceblue;margin-right:110px">
+                        تماس : 06625252528
+
+                    </p>
+                </div>
+            </div>
+<br>
+            <div class="footer-bot">
+                <center>
+                    <div class="copyright" style="margin-right: 350px;">
+                        تمام حقوق مادی و معنوی متعلق به سایت لرن می باشد
+                      </div>
+                </center>
+                <br>
+            </div>                  
+        </div>
+
+       
+    </footer>
+
+</div>
+
+</body>
+</html>

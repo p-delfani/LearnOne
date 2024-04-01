@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاگ</title>
+
+    <style>
+        @font-face {
+            font-family: 'fontsite';
+          
+            src: url(fonts/Sans\ a4fran3.eot);
+            src: url(fonts/Sans\ a4fran3.ttf);
+            src: url(fonts//Sans\ a4fran3.woff);
+        }
+        *{
+            margin: auto;
+            padding: auto;
+            font-family: 'fontsite';
+        }
+        #menu{
+            width: 1300px;
+            background-color: rgba(17, 17, 17, 0.76);
+            position: fixed;
+        }
+        
+        #menu-right{
+            width: 1000px;
+            height: 100px;
+            margin-right: 50px;
+        }
+        
+        #menu-right li{
+            margin-top: 25px;
+            display: inline-block;
+            padding: 15px;
+            margin-right: 5px;
+        }
+        
+        #menu-right a{
+            text-decoration: none;
+            color: rgb(250, 247, 247);
+        
+        }
+        
+        #menu-logo{
+            background-image: url(img/logo.png);
+            width: 35px;
+            height: 35px;
+            float: right;
+            margin-top: 35px;
+        }
+        #menu-right a:hover{
+            background-color:rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            cursor: pointer;
+        
+        }
+        
+        #menu-left a:hover{
+            background-color:rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            cursor: pointer;
+        
+        }
+        
+        #menu-left{
+            width: 230px;
+            height: 100px;
+            margin-left: 20px;
+        }
+        
+        
+        #menu-left li{
+            margin-top: 25px;
+            display: inline-block;
+            padding: 5px;
+            margin-top: 30px;
+        }
+        
+        #menu-left a{
+            text-decoration: none;
+            color: rgb(253, 253, 253);
+            margin-right: 15px;
+        }
+        html,body{
+            margin:0;
+            height:120%;
+            font-family: 'Josefin Sans', sans-serif;
+          
+          }
+          .header{
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: flex-start;
+            height:50vw;
+            min-height:400px;
+            max-height:550px;
+            min-width:300px;
+            color:#eee;
+          }
+          .header:after{
+            content:"";
+            width:100%;
+            height:40%;
+            position:absolute;
+            bottom:0;
+            left:0;
+            z-index:-1;
+           background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27,32,48,1) 100%);
+          }
+          .header:before{
+            content:"";
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+              -webkit-transform: translateZ(0) scale(1.0, 1.0);
+              transform: translateZ(0);
+              background: linear-gradient(rgba(13, 13, 14, 0.904),#4a63889d), url(img/blog2.jpg);
+              background: linear-gradient(#fff);
+            background-size:cover;
+            background-attachment:fixed;
+            animation: grow 60s  linear 10ms infinite;
+            transition:all 0.2s ease-in-out;
+            z-index:-2
+          }
+          .header a{
+            color:#000000
+          }
+          .menu{
+            display:block;
+            width:30px;
+            height:30px;
+            border:2px solid #0f0f0f;
+            border-radius:3px;
+            position:absolute;
+            right:20px;
+            top:20px;
+            text-decoration:none
+          }
+          .menu:after{
+            content:"";
+            display:block;
+            width:20px;
+            height:3px;
+            background:rgb(0, 0, 0)7f7;
+            position:absolute;
+            margin:0 auto;
+            top:5px;
+            left:0;
+            right:0;
+            box-shadow:0 8px, 0 16px
+          }
+          .logo{
+            border:2px solid #fff;
+            border-radius:3px;
+            text-decoration:none;
+            display:inline-block;
+            margin:20px;
+            padding:5px 10px;
+            font-weight:600;
+            font-size:1.2em;
+            box-sizing:border-box
+          }
+          .sides, .info{
+            flex: 0 0 auto;
+            width:50%
+          }
+          .info{
+            width:100%;
+            padding:15% 10% 0 10%;
+            text-align:center;
+            text-shadow:0 2px 3px rgba(0,0,0,0.2)
+          }
+          .author{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background:url(img/user1.jpg) center no-repeat;
+            background-size:cover;
+            box-shadow:0 2px 3px rgba(0,0,0,0.3);
+            margin-bottom:3px
+          }
+          .info h4, .meta{
+            font-size:0.7em
+          }
+          .meta{
+            font-style:italic;
+          }
+          @keyframes grow{
+            0% { transform:scale(1)}
+            50% { transform:scale(1.2)}
+          }
+          .content{  
+            padding:5% 10%;
+            text-align:justify
+          }
+          .btn{
+            color:#333;
+            border:2px solid;
+            border-radius:3px;
+            text-decoration:none;
+            display:inline-block;
+            padding:5px 10px;
+            font-weight:600
+          }
+          
+          .twtr{
+            margin-top:100px
+          }
+          .footr {
+            width: 100%;
+            height: 350px;
+            background: #1a1a1a;
+            margin: 20px auto 0;
+            position: relative;
+        }  
+        
+        .main-footer{
+            margin: 0 auto;
+            width: 1100px;
+        }
+        
+        .about{
+            width: 350px;
+           height:300px;
+            float: right;
+        }
+        
+        .about h5 {
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        
+        }
+        
+        .about p{
+            color: #e2e2e2;
+            text-align: justify;
+            font-size: 15px;
+            font-family: 'fontsite';
+        
+        }
+        
+        .social{
+            width: 350px;
+            margin: 0 50px;
+            float: right;
+        }
+        
+        .about h5 , .social h5 {
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        }
+        
+        .social ul li{
+            float: right;
+            margin: 10px 2px;
+        }   
+        
+        .social ul li img{
+            border-radius: 50%;
+        }
+        
+        .about h5 , .social h5 , .access h5{
+            color: #e2e2e2;
+            padding:5px;
+            margin: 20px auto;
+        }
+        
+        .access{
+            width: 300px;
+            float: right;
+        }
+        
+        .access ul li a{
+            color: #e2e2e2;
+            margin: 2px;
+        }
+        .access ul li a:hover{
+            color: #4c7d89;
+        }
+        
+        .footer-bot{
+            width: 1100px;
+            height: 50px;
+            background: #3a1847;
+            margin: 0 auto;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            clear: both;
+        }
+        
+        .copyright{
+            margin: 15px 20px;
+            float: right;
+            color: #e2e2e2;
+            }
+            .footer-bot .ui{
+                margin:15px 20px;
+                float: left;
+                color: #e2e2e2; 
+            }
+        
+        
+        
+            
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<div style="width: 1300px;height:1000px;  margin:auto;">
+    <header>
+        
+        <section id="menu">
+            
+               <section id="menu-right" style="float: right;">
+                <section id="menu-logo">
+                
+
+                </section>
+                <nav dir="rtl">
+                    <ul>
+                        <li><a href="index.html"> خانه </a></li>
+                      <li><a href="#courses">آخرین دوره ها</a></li>
+                      <li><a href="#blog"> وبلاگ</a></li>
+                      <li><a href="support.html">   پشتیبانی</a></li>
+                      <li><a href="#footer"> تماس با ما </a></li>
+                    </ul>
+                </nav>
+                
+            </section>
+
+        </section>
+    </header>
+
+
+</head>
+<body dir="rtl">
+    <div class="header">
+        
+        <div class="info">
+          <h1 style="color: #ffffff;">چرا پلاس پلاس چرا هنوز استفاده میشود؟</h1>
+          <div class="meta">
+            <a href="" target="_b" class="author"></a><br> توسط ادمین 24 اردیبهشت 
+          </div>
+        </div>
+      </div>
+      <section class="content">
+        <p>   سی پلاس پلاس چرا هنوز استفاده میشود؟</p>
+       <br>
+       زبان برنامه نویسی معروف ++C (سی پلاس پلاس) یک زبان برنامه نویسی عمومی است که بیش از 40 سال است که برای برنامه نویسی بازی، مهندسی نرم افزار، ساختار داده، توسعه مرورگرها، سیستم عامل ها، اپلیکیشن ها، و موارد دیگر استفاده می شود.
+
+       این زبان توسط Bjarne Stroustrup در سال 1979 توسعه یافت، و از برنامه نویسی رویه ای (procedural)، شیء گرا (object-oriented) و برنامه نویسی تابعی (functional) پشتیبانی می کند،‌ و به عنوان توسعه زبان C ایجاد شده است (که هنوز به راحتی می‌تواند با آن ادغام شود). به همین دلیل سطح بالایی از کنترل بر منابع سیستم و حافظه را به برنامه نویسان می دهد و پایه میلیون ها خط کد و برنامه موجود است.
+       
+       اما با وجود بسیاری از زبان‌های دیگر که از سال 1979 تا به امروز توسعه یافته اند، از جاوا گرفته تا سی شارپ، چرا زبان برنامه نویسی سی پلاس پلاس هنوز در حال استفاده است؟ و چرا برخی از توسعه دهندگان حتی آن را به زبان‌های جدیدتر، درخشان تر و محبوب تر ترجیح می دهند؟
+       
+       در این مقاله ما برخی از این دلایل را بررسی می کنیم، و می گوییم چه چیزی ++C را همچنان به عنوان یک زبان امروزی مورد استفاده ساخته است، و چرا این ابزار یک زبان منحصر به فرد در جعبه ابزار هر توسعه‌ دهنده ای است.
+       
+       
+
+ <br>
+  <br>
+    <p>
+        1. تاریخچه  دارد
+        سی پلاس پلاس بیش از 40 سال است که وجود دارد، یعنی مطمئنا یک زبان قدیمی است. اما همچنان به این معناست که بیش از 40 سال است که وجود داشته است، و بیش از 40 سال یعنی توسعه دهندگان بیش از 40 سال است که صدها هزار ساعت را صرف ساختن کتابخانه‌ها برای استفاده از آن، تکمیل متدولوژی آن، توسعه موارد آزمایشی،‌ و اصلاح آن در ایجاد بهترین نسخه از خودش ساخته اند.
+        
+        از دیدگاه توسعه دهنده، و از نظر علم کامپیوتر،‌ این بدان معناست که میلیون‌ها برنامه قبلا با سی پلاس پلاس نوشته شده اند، بنابراین حتی اگر چیز جدیدی با سی پلاس پلاس نوشته نشده باشد، باز هم جهت نگهداری آنچه که به صورت قدرتمند وجود داشته است نیازمند به آن است!
+        
+        به همین دلیل سی پلاس پلاس به دلیل قدیمی بودن آن مهم است.
+    </p>
+        <br>
+        <br>
+    </p>
+ <br>
+        <p>
+            2. کارآمد است
+            بیاید واضح بگوییم: اگر سی پلاس پلاس کار نمی کرد، امروز وجود نداشت!
+            
+            سی پلاس پلاس زبانی است که انتزاع کمی از معماری مورد استفاده کامپیوتر را ارائه می دهد و ساختار مشابه ساختار پردازنده را حفظ می کند.
+            
+            به این ترتیب، عملکرد و حافظه آن کارآمد است، زیرا واسطه زیادی بین کدی که می نویسید و آنچه که کامپیوتر برای درک آن کد نیاز دارد، وجود ندارد.
+            
+            این یعنی ++C به خوبی اجرا می‌شود و به طور موثر اجرا می شود. این مورد بخشی از دلیل استفاده از آن است، و اینکه چرا استفاده از آن در حال گسترش است و کم نمی شود.          
+        </p>
+        <br>
+        <br>
+    </p>
+        <br>
+        <p>
+            3. همه کاره است
+            برخلاف برخی از زبان های برنامه نویسی، سی پلاس پلاس توانسته مفید، رایج و حیاتی بماند، زیرا با تغییر نیازها توانسته تکامل یابد. برخلاف سایر زبان‌ها، سی پلاس پلاس سازگار است، و به سرعت خود را با نیازهای برنامه نویس و نرم افزار سازگار کرده است.
+            
+            علاوه بر این، سی پلاس پلاس همه منظوره است، زیرا به طور گسترده برای مدت طولانی مورد استفاده قرار گرفته که با اکثر زبان‌های دیگر موجود در بازار و برای بیشتر کاربردهای مبرم سازگاری بالایی دارد. می توانید از سی پلاس پلاس برای زیرساخت در سمت کلاینت یا برای ارتباطات بین پردازشی و شبکه و غیره استفاده کنید.
+        </p>
+            <br>
+            <p>
+              چرا از Google Colab استفاده بکنیم؟
+              1- نیازی به نصب کتابخانه های سنگین یادگیری ماشین رو سیستم خود ندارید.
+              
+              2- همه ما می دانیم که اگر خودتان چیزی را امتحان نکنید، مطالعه یا خواندن یا تماشای یک آموزش فایده ای ندارد. اما برای انجام این کار، به مشخصات سخت افزاری واقعا پیشرفته ای نیاز دارید تا سیستم شما بتواند چنین حجم کاری را تحمل کند. و همه نمی توانند لپ تاپی با چنین مشخصاتی بخرند. بنابراین برای یادگیری و تمرین یادگیری ماشین از google colab استفاده می کنیم.
+              
+              3- قابلیت اجرای برنامه بر روی GPU را دارد که می تواند سرعت پردازش را به شدت بالا برد.
+            </p>
+            <br>
+
+            <p>
+                4. بازار کار خوبی دارد
+                با وجود کدهای بسیار زیادی که قبلا در سی پلاس پلاس نوشته شده است، جای تعجب نیست که مشاغل زیادی برای توسعه دهندگانی که در ++C مهارت دارند وجود دارد. شرکت‌های برتر از گوگل گرفته تا مایکروسافت اغلب به دنبال توسعه دهندگان سی پلاس پلاس هستند و آن‌ها را استخدام می‌ کنند.
+                
+                چه قدیمی باشد چه نباشد، هنوز هم برای ساخت برنامه های اندروید، بازی های ویدیوی، واقعیت مجازی، و برنامه های قابل اعتماد فین‌تک (FinTech) محبوب است. به همین دلیل، میزبان یک بازار کار بسیار فعال می باشد و نباید توسط توسعه دهندگان و مدیران استخدامی که در حال ساخت تیم‌های قدرتمند هستند نادیده گرفته شود.
+            </p>
+
+           <br><br>
+
+
+            <p>
+
+                حال ساخت تیم‌های قدرتمند هستند نادیده گرفته شود.
+
+                5. ستون اصلی سیستم عامل، مرورگر، کتابخانه ها، و موارد دیگر است
+                صرف نظر از چیزهایی که می‌ سازید، احتمالا آن را برای یک سیستم عامل می‌ سازید. این بدان معناست که باید با سی پلاس پلاس ادغام شود.
+                
+                چرا؟ زیرا تقریبا تمام سیستم عامل های اصلی جهان با ++C ساخته شده اند، از جمله ویندوز، مک، لینوکس. بنابراین صرف نظر از کاربردهای زیاد سی پلاس پلاس، این استفاده درک آن را ضروری می سازد.
+                
+                و این مورد در رابطه با تمام مرورگرهای وب بزرگ نیز صدق می‌ کند. موتورهای رندر آن‌ها با سی پلاس پلاس ساخته شده اند، زیرا سی پلاس پلاس سریع و ساده است، و ما می‌خواهیم مرورگرمان در سریع ترین زمان ممکن رندر شود (یادتان باشد کاربران افراد صبوری نیستند).
+                
+                به همین دلیل (سرعت) بسیاری از کتابخانه ها نیز به سی پلاس پلاس وابسته هستند، از جمله برخی از پرکاربردترین کتابخانه های Machine Learning (مانند Tensorflow). اگر یک کتابخانه به محاسبات با کارایی بالا، شامل ضرب ماتریس‌های بزرگ برای train کردن Machine Learning نیاز داشته باشد، آنگاه سرعت بهینه ++C دارایی قابل توجهی خواهد بود.
+            </p>
+
+            <br><br>
+            <p>
+                6. جامعه بزرگی دارد
+                یکی دیگر از مزایای قابل توجه سن و بلوغ C++ این است که دارای جامعه بزرگی از کاربران است و این جامعه بزرگ کاربران، که در سراسر جهان و در هر گوشه از دنیای توسعه دهنده پراکنده شده اند، از سی پلاس پلاس و کسانی که با آن کدنویسی می کنند پشتیبانی می کنند، با انبوهی از پشتیبانی،‌ هم نقدی و هم اپن سورس. تعداد بی شماری از دوره های آنلاین، کتابخانه ها، بانک های منابع، و جوامع open source به صورت آنلاین برای ++C وجود دارند که بین رتبه های برتر پرکاربردترین ها در StackOverflow و GitHub است.
+            </p>
+
+            <br><br>
+            <p>   
+                جمع بندی
+                در پایان، هر پروژه برنامه نویسی نیاز به تصمیم گیری جدی در مورد زبان مورد استفاده و چرایی استفاده از آن دارد. تصمیم گیری در مورد اینکه آیا سی پلاس پلاس بهترین زبان برای پروژه شما است، امری اتفاقی نیست. با در نظر گرفتن سرعت، قیمت و کیفیت تحویل، می بینید که به خوبی در مقابل رقبا ایستاده است. با این حال مهم است که چه چیزی می سازید و الویت های شما چیست.
+                
+                اما این اشتباه بزرگی است اگر فقط به این دلیل که این زبان یک زیان جدید نیست، آن را کنار بگذارید. و اگر دلایل بالا با شما همخوانی دارد و به نظر می رسد با نیازهای برنامه ای که در حال توسعه آن هستید مطابقت دارد، از شما می خواهیم که این زبان همه کاره، سریع، اساسی و کارآمد را در نظر بگیرید.
+                
+                
+            </p>
+      </section>
+
+      <footer>
+        <div id="footer" class="footr" dir="rtl">
+            
+              <div class="about" style="margin-right: 80px;">
+                <h5 style="margin-right: 85px;margin-top:30px">درباره ما</h5>
+                <p style="margin-right: 85px;">
+                    لرن یک وب سایت جامع آموزشی در حوزه برنامه نویسی حرفه ای بوده و تمام تلاش این مجموعه و تیم آموزشی این بوده است که رضایت هنرآموزان در هر صورت بر هر چیزی اولویت داشته باشد و ثانیا تمام دانشجویان دوره را به برنامه نویسان حرفه ای تبدیل کند.
+                </p>
+              </div>
+              <div class="about" style="margin-right: 20px;">
+                <h5 style="margin-right: 85px;margin-top:30px">درباره ما</h5>
+                <p style="margin-right: 85px;">
+                    لرن یک وب سایت جامع آموزشی در حوزه برنامه نویسی حرفه ای بوده و تمام تلاش این مجموعه و تیم آموزشی این بوده است که رضایت هنرآموزان در هر صورت بر هر چیزی اولویت داشته باشد و ثانیا تمام دانشجویان دوره را به برنامه نویسان حرفه ای تبدیل کند.
+                </p>
+              </div>
+              <div class="social" style="margin-right: 10px; margin-top:30px" >
+                <h5 style="margin-right: 110px;">با ما در ارتباط باشید</h5>
+                <div>
+                    <p style="color:aliceblue;margin-right:110px">
+                        ایمیل:learn@gmail.com
+                    </p>
+                    <br>
+                    <p style=" color:aliceblue;margin-right:110px">
+                        تماس : 091645458725
+
+                    </p>
+                    <br>
+                    <p style=" color:aliceblue;margin-right:110px">
+                        تماس : 06625252528
+
+                    </p>
+                </div>
+            </div>
+<br>
+            <div class="footer-bot">
+                <center>
+                    <div class="copyright" style="margin-right: 350px;">
+                        تمام حقوق مادی و معنوی متعلق به سایت لرن می باشد
+                      </div>
+                </center>
+                <br>
+            </div>                  
+        </div>
+
+       
+    </footer>
+
+</div>
+
+</body>
+</html>
